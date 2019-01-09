@@ -123,8 +123,8 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
               \parsep    \z@
               \partopsep \p@ \@plus\z@ \@minus\p@}
 
-\renewcommand\labelitemi{\normalfont\bfseries --}
-\renewcommand\labelitemii{$\m@th\bullet$}
+\renewcommand\labelitemii{\normalfont\bfseries --}
+\renewcommand\labelitemi{$\m@th\bullet$}
 
 \setlength\arraycolsep{1.4\p@}
 \setlength\tabcolsep{1.4\p@}
