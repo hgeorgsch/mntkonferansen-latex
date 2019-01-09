@@ -1,6 +1,10 @@
 # mntkonferansen-latex
 LaTeX class and styles for contributions to the Norwegian MNT-konferansen.
 
+The class is actively developed leading up to the final submission
+date for the conference at the end of January 2019.  If you have
+trouble, please contact the developer(s) (below).
+
 ## The files:
 
 - template.tex a simple demo to show usage and appearance.
@@ -17,4 +21,5 @@ LaTeX class and styles for contributions to the Norwegian MNT-konferansen.
   for babel options norsk and nynorsk.
 
 ## Feedback:
+
 **Initial developer:** Hans Georg Schaathun: <hasc@ntnu.no>
