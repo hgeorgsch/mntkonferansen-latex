@@ -8,7 +8,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
 
-\LoadClass[twoside,11pt]{article}
+\LoadClass[a4paper,twoside,11pt]{article}
 
 % \RequirePackage{multicol} % needed for the list of participants, index
 
@@ -39,7 +39,7 @@
 
 \setlength\headsep   {16\p@}
 
-\advance\textheight by -\headsep
+\advance\textheight by -\headheight
 \advance\textheight by -\headsep
 
 % Spacing and linebreak
