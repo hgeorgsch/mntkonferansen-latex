@@ -10,7 +10,7 @@ trouble, please contact the developer(s) (below).
 - template.tex a simple demo to show usage and appearance.
   With the following auxiliary files:
   - Makefile
-  - Lenna.jpg
+  - tromso.jpg
   - template.bib
   
 - mnt.cls is the class file
