@@ -1,6 +1,4 @@
-% LLNCS DOCUMENT CLASS -- version 2.8
-% for LaTeX2e
-%
+% Documentclass for MNT-konferansen
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{mnt}[2019/01/31 v0.1
 ^^JLaTeX document class for the Norwegian "MNT-konferansen"]
@@ -9,8 +7,6 @@
 \ProcessOptions
 
 \LoadClass[a4paper,twoside,11pt]{article}
-
-% \RequirePackage{multicol} % needed for the list of participants, index
 
 \RequirePackage[round]{natbib}
 \RequirePackage{babel}
