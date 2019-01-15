@@ -19,6 +19,8 @@
 \RequirePackage{url}
 \RequirePackage{times}
 
+\RequirePackage{siunitx}
+
 \RequirePackage{caption}
 \captionsetup{font={small,it},
               labelfont={small,it},
@@ -226,6 +228,7 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
   \renewcommand{\figurename}{Fig.}
   \renewcommand{\tablename}{Tabell}
   \renewcommand\andname{og}
+  \sisetup{output-decimal-marker = {,}}
 }
 \addto\captionsnorsk{%
   \renewcommand{\abstractname}{SAMMENDRAG:}
@@ -233,6 +236,7 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
   \renewcommand{\figurename}{Fig.}
   \renewcommand{\tablename}{Tabell}
   \renewcommand\andname{og}
+  \sisetup{output-decimal-marker = {,}}
 }
 
 % Running header
