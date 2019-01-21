@@ -12,7 +12,7 @@
 \RequirePackage{babel}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8x]{inputenc}
-\RequirePackage{url}
+\RequirePackage{url,hyperref}
 \RequirePackage{times}
 
 \RequirePackage{siunitx}
@@ -68,14 +68,9 @@
 
 % Sections
 
-\def\@section{\@startsection{section}{1}{\z@}%
-                       {-18\p@ \@plus -4\p@ \@minus -4\p@}%
-                       {12\p@ \@plus 4\p@ \@minus 4\p@}%
-                       {\normalfont\large\bfseries\boldmath
-                        \rightskip=\z@ \@plus 8em\pretolerance=10000 }}
-\newcommand\t@@section[1]{\@section*{\MakeUppercase{#1}}}
-\newcommand\t@section[1]{\@section{\MakeUppercase{#1}}}
-\def\section{\@ifstar\t@@section\t@section}
+\RequirePackage{sectsty,titlecaps}% http://ctan.org/pkg/titlecaps
+\sectionfont{\MakeUppercase}
+
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
                        {-18\p@ \@plus -4\p@ \@minus -4\p@}%
                        {8\p@ \@plus 4\p@ \@minus 4\p@}%
