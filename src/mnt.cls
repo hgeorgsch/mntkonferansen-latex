@@ -14,6 +14,7 @@
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage{url,hyperref}
 \RequirePackage{times}
+%\RequirePackage{newtxtext,newtxmath}
 
 \RequirePackage{siunitx}
 
@@ -118,6 +119,19 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 
 \renewcommand\labelitemii{\normalfont\bfseries --}
 \renewcommand\labelitemi{$\m@th\bullet$}
+\renewenvironment{quotation}
+               {\list{}{\listparindent 1.5em%
+               \itemindent    \listparindent
+               \rightmargin   \leftmargin
+               \topsep        \z@ \@plus\p@%
+               \parsep        \z@ \@plus\p@}%
+               \item\relax}
+               {\endlist}
+\renewenvironment{quote}
+               {\list{}{\rightmargin\leftmargin%
+               \topsep        \z@ \@plus\p@}%
+               \item\relax}
+               {\endlist}
 
 \setlength\arraycolsep{1.4\p@}
 \setlength\tabcolsep{1.4\p@}
