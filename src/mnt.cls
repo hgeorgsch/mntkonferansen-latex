@@ -17,6 +17,8 @@
 %\RequirePackage{newtxtext,newtxmath}
 
 \RequirePackage{siunitx}
+\RequirePackage[vskip=0pt]{quoting}
+%\RequirePackage[vskip=0pt,font=itshape]{quoting}
 
 \RequirePackage{caption}
 \captionsetup{font={small,it},
@@ -63,7 +65,6 @@
 \def\conference#1{\xdef\@conf{#1}}
 \conference{}
 \setcounter{secnumdepth}{2}
-
 
 %\let\footnotesize\small
 
@@ -119,19 +120,20 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 
 \renewcommand\labelitemii{\normalfont\bfseries --}
 \renewcommand\labelitemi{$\m@th\bullet$}
-\renewenvironment{quotation}
-               {\list{}{\listparindent 1.5em%
-               \itemindent    \listparindent
-               \rightmargin   \leftmargin
-               \topsep        \z@ \@plus\p@%
-               \parsep        \z@ \@plus\p@}%
-               \item\relax}
-               {\endlist}
-\renewenvironment{quote}
-               {\list{}{\rightmargin\leftmargin%
-               \topsep        \z@ \@plus\p@}%
-               \item\relax}
-               {\endlist}
+%%% \renewenvironment{quotation}
+%%%                {\list{}{\listparindent 1.5em%
+%%%                \itemindent    \listparindent
+%%%                \rightmargin   \leftmargin
+%%%                \topsep       \z@%\@plus\p@%
+%%%                \parsep        \z@ \@plus\p@}%
+%%%                \item\relax}
+%%%                {\endlist}
+%%% \renewenvironment{quote}
+%%%                {\list{}{\rightmargin\leftmargin%
+%%%                \topsep =0pt%        \z@%\@plus\p@
+%%%                }%
+%%%                \item\relax}
+%%%                {\endlist}
 
 \setlength\arraycolsep{1.4\p@}
 \setlength\tabcolsep{1.4\p@}
