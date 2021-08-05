@@ -31,12 +31,21 @@
 %\RequirePackage[vskip=0pt,font=itshape]{quoting}
 
 \RequirePackage{caption}
+\ifjournal
+\captionsetup{font={small},
+              labelfont={small,it},
+              format=plain,
+              labelsep=period,
+              % singlelinecheck=false,
+              justification=justified}
+\else
 \captionsetup{font={small,it},
               labelfont={small,it},
               format=plain,
               labelsep=period,
               % singlelinecheck=false,
               justification=justified}
+\fi
 %\captionsetup[table]{tableposition=top}
 
 % Margins and such
