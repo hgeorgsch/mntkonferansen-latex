@@ -1,4 +1,4 @@
-all: template.pdf
+all: template.pdf journal.pdf
 
 template.aux: template.tex mnt.cls template.bib apalike.bst
 journal.aux: journal.tex mnt.cls template.bib apalike.bst
