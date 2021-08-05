@@ -45,6 +45,10 @@ Note that there is no reason not to use biblatex with the conference
 version or bibtex with the journal version.  The options can be
 selected independently.
 
+Observe that with the biblatex option, the DOI field from the bib
+file is used.  We have not implemented this with the bibtex version,
+simply because it is more difficult to do.
+
 ## Design Questions
 
 There are a couple of questions which should be discussed in the
