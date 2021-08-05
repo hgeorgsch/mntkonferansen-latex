@@ -13,14 +13,27 @@
 
 \newif\ifjournal\journalfalse
 \DeclareOption{journal}{\journaltrue}
+\newif\ifbiblatex\biblatexfalse
+\DeclareOption{biblatex}{\biblatextrue}
 \ProcessOptions\relax
 
 % Packages
 
-\RequirePackage[round]{natbib}
 \RequirePackage{babel}
-\RequirePackage[T1]{fontenc}
-\RequirePackage[utf8x]{inputenc}
+\ifbiblatex
+   \usepackage[backend=biber, natbib=true, style=apa]{biblatex}
+\else
+   \RequirePackage[T1]{fontenc}
+   \RequirePackage[utf8x]{inputenc}
+   \RequirePackage[round]{natbib}
+   % Norwegian characters in headers
+   \PrerenderUnicode{æ}
+   \PrerenderUnicode{ø}
+   \PrerenderUnicode{å}
+   \PrerenderUnicode{Æ}
+   \PrerenderUnicode{Ø}
+   \PrerenderUnicode{Å}
+\fi
 \RequirePackage{url}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{times}
@@ -240,13 +253,6 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 \setlength\arraycolsep{1.4\p@}
 \setlength\tabcolsep{1.4\p@}
 
-% Norwegian characters in headers
-\PrerenderUnicode{æ}
-\PrerenderUnicode{ø}
-\PrerenderUnicode{å}
-\PrerenderUnicode{Æ}
-\PrerenderUnicode{Ø}
-\PrerenderUnicode{Å}
 
 % Captions
 \renewcommand{\abstractname}{ABSTRACT:}

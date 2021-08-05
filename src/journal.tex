@@ -1,4 +1,4 @@
-\documentclass[nynorsk,journal]{mnt}
+\documentclass[nynorsk,journal,biblatex]{mnt}
 
 \usepackage{graphicx}   % to import PNG, JPEG and PDF graphics
 \setcounter{page}{31} % Starting page number
@@ -9,6 +9,9 @@
 \title{\LaTeX\ til \emph{Nordic Journal of STEM Education}}
 \author{Hans Georg Schaathun,
 \emph{NTNU --- Noregs Teknisk-Naturvitskaplege Universitet}}
+
+\addbibresource{template.bib}
+
 
 \begin{document}
 \maketitle
@@ -28,6 +31,10 @@ Klassa bruker babel, og \emph{må} ha ein språkopsjon til
 
 Opsjonen \texttt{journal} skal brukast for tidsskriftartiklar, 
 men ikkje for konferanseartiklar.
+Dette dømet bruker ogso opsjonen \texttt{biblatex}, som bruker
+biblatex i staden for natbib.  Dette oppsettet krev kompilering
+med biber og lualatex i staden for bibtex og pdflatex.  Sjå 
+\texttt{Maketitle} for detaljar.
 
 \begin{table}
 \centering
@@ -142,8 +149,9 @@ Me kan godt diskutera kva som er best.
 Denne referansen har registrert DOI: \citet{ss2008cocreation}
 
 
-%\footnotesize
-\bibliographystyle{apalike}
-\bibliography{template}
+
+% \bibliographystyle{plainnat}
+% \bibliography{template}
+\printbibliography
 
 \end{document}

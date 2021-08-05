@@ -10,7 +10,10 @@ journal.aux: journal.tex mnt.cls template.bib apalike.bst
 %.aux: %.tex 
 	pdflatex $<
 
-%.bbl: %.tex %.aux 
+journal.bbl: %.bbl: %.tex %.aux 
+	biber $*
+
+template.bbl: %.bbl: %.tex %.aux 
 	bibtex $*
 
 %.html: %.tex
