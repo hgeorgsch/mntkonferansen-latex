@@ -3,16 +3,26 @@
 \ProvidesClass{mnt}[2019/01/31 v0.1
 ^^JLaTeX document class for the Norwegian "MNT-konferansen"]
 
+% Base Class
+
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
-
 \LoadClass[a4paper,twoside,11pt]{article}
+
+% Options
+
+\newif\ifjournal\journalfalse
+\DeclareOption{journal}{\journaltrue}
+\ProcessOptions\relax
+
+% Packages
 
 \RequirePackage[round]{natbib}
 \RequirePackage{babel}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8x]{inputenc}
-\RequirePackage{url,hyperref}
+\RequirePackage{url}
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{times}
 %\RequirePackage{newtxtext,newtxmath}
 
@@ -42,6 +52,10 @@
 
 \advance\textheight by -\headheight
 \advance\textheight by -\headsep
+\ifjournal
+  \advance\textheight by -\headheight
+  \advance\textheight by -\headsep
+\fi
 
 % Spacing and linebreak
 
@@ -62,8 +76,11 @@
 
 % OTHER
 
-\def\conference#1{\xdef\@conf{#1}}
+\def\conference#1{\gdef\@conf{#1}}
 \conference{}
+\def\doi#1{\gdef\@doi{#1}}
+\doi{TBA}
+\def\makedoi{DOI: \href{http://doi.org/\@doi}{\@doi}}
 \setcounter{secnumdepth}{2}
 
 %\let\footnotesize\small
@@ -247,8 +264,28 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 }
 
 % Running header
-\let\@oddfoot\@empty\let\@evenfoot\@empty
-\def\@evenhead{\hfill\@conf\hfill}
-\def\@oddhead{\hfill\@conf\hfill}
+\ifjournal
+  \RequirePackage{fancyhdr,titling}
+  \pagestyle{fancy}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+  \fancyhead{}
+  % \fancyhead[R]{\theauthor}
+  \fancyfoot{}
+  \fancyfoot[LE,RO]{\thepage}
+  \fancyfoot[LO,RE]{\@conf}
+  \fancypagestyle{plain}{}
+  \fancypagestyle{plain}{
+     \fancyhead[R]{\makedoi}
+  }
+  \AtBeginDocument{%
+       \pagestyle{fancy}
+       \thispagestyle{empty}
+     }
+\else
+  \let\@oddfoot\@empty\let\@evenfoot\@empty
+  \def\@evenhead{\hfill\@conf\hfill}
+  \def\@oddhead{\hfill\@conf\hfill}
+\fi
 
 \endinput
