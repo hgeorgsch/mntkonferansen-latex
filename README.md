@@ -40,6 +40,11 @@ which makes the class load biblatex instead of natbib.  Compatibility
 mode is used, so both provide the same citation commands.
 However, bibliography for the journal version has to be compilaed with
 biber instead of bibtex.
+It may also be necessary to compile with lualatex instead of pdflatex
+if certain unicode characters are used (e.g. ½).  The traditional
+packages for UTF-8 support are not compatible with biblatex, while
+lualatex has native UTF-8 support so that they are not required.
+
 
 Note that there is no reason not to use biblatex with the conference
 version or bibtex with the journal version.  The options can be
