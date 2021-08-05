@@ -22,6 +22,8 @@
 \RequirePackage{babel}
 \ifbiblatex
    \usepackage[backend=biber, natbib=true, style=apa]{biblatex}
+   \RequirePackage[T1]{fontenc}
+   \RequirePackage[utf8]{inputenc}
 \else
    \RequirePackage[T1]{fontenc}
    \RequirePackage[utf8x]{inputenc}
