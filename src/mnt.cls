@@ -120,7 +120,7 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 
 \def\@listI{\leftmargin\leftmargini
             \parsep 0\p@ \@plus1\p@ \@minus\p@
-            \topsep 8\p@ \@plus2\p@ \@minus4\p@
+            \topsep 4\p@ \@plus2\p@ \@minus4\p@
             \itemsep0\p@}
 \let\@listi\@listI
 \@listi
