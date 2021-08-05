@@ -62,8 +62,8 @@
 \advance\textheight by -\headheight
 \advance\textheight by -\headsep
 \ifjournal
-  \advance\textheight by -\headheight
-  \advance\textheight by -\headsep
+  \advance\topmargin by -\headheight
+  \advance\topmargin by -\headsep
 \fi
 
 % Spacing and linebreak
@@ -197,7 +197,6 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 
 % maketitle
 
-
 \renewcommand\maketitle{%
   \newpage
   \begingroup
@@ -274,7 +273,7 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
 
 % Running header
 \ifjournal
-  \RequirePackage{fancyhdr,titling}
+  \RequirePackage{fancyhdr}
   \pagestyle{fancy}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -289,7 +288,7 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
   }
   \AtBeginDocument{%
        \pagestyle{fancy}
-       \thispagestyle{empty}
+       \thispagestyle{plain}
      }
 \else
   \let\@oddfoot\@empty\let\@evenfoot\@empty
