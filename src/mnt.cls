@@ -5,9 +5,9 @@
 
 % Base Class
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions
-\LoadClass[a4paper,twoside,11pt]{scrartcl}
+\LoadClass[a4paper,twoside,11pt]{article}
 
 % Options
 
@@ -22,10 +22,10 @@
 \RequirePackage{babel}
 \ifbiblatex
    \usepackage[backend=biber, natbib=true, style=apa]{biblatex}
-   \RequirePackage[T1]{fontenc}
-   \RequirePackage[utf8]{inputenc}
-   % \RequirePackage{fontspec}
-   % \setmainfont{Times New Roman}
+   % \RequirePackage[T1]{fontenc}
+   % \RequirePackage[utf8]{inputenc}
+   \RequirePackage{fontspec}
+   \setmainfont{Times New Roman}
 \else
    \RequirePackage[T1]{fontenc}
    \RequirePackage[utf8x]{inputenc}
@@ -37,10 +37,10 @@
    \PrerenderUnicode{Æ}
    \PrerenderUnicode{Ø}
    \PrerenderUnicode{Å}
+   \RequirePackage{times}
 \fi
 \RequirePackage{url}
 \RequirePackage[hidelinks]{hyperref}
-\RequirePackage{times}
 %\RequirePackage{newtxtext,newtxmath}
 
 \RequirePackage{siunitx}
