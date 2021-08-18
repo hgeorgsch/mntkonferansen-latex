@@ -5,9 +5,9 @@
 
 % Base Class
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \ProcessOptions
-\LoadClass[a4paper,twoside,11pt]{article}
+\LoadClass[a4paper,twoside,11pt]{scrartcl}
 
 % Options
 
@@ -24,6 +24,8 @@
    \usepackage[backend=biber, natbib=true, style=apa]{biblatex}
    \RequirePackage[T1]{fontenc}
    \RequirePackage[utf8]{inputenc}
+   % \RequirePackage{fontspec}
+   % \setmainfont{Times New Roman}
 \else
    \RequirePackage[T1]{fontenc}
    \RequirePackage[utf8x]{inputenc}
