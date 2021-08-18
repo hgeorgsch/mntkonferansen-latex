@@ -100,8 +100,16 @@
 
 % OTHER
 
-\def\conference#1{\gdef\@conf{#1}}
-\conference{}
+\ifjournal
+  \def\journal#1{\gdef\@journal{#1}}
+  \def\Jvolume#1{\gdef\@vol{#1}}
+  \def\Jnumber#1{\gdef\@no{#1}}
+  \journal{}
+\else
+  \def\conference#1{\gdef\@conf{#1}}
+  \conference{}
+\fi
+\def\firstpage#1{\setcounter{page}{31}} % Starting page number
 \def\doi#1{\gdef\@doi{#1}}
 \doi{TBA}
 \def\makedoi{DOI: \href{http://doi.org/\@doi}{\@doi}}
@@ -279,6 +287,9 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
   \sisetup{output-decimal-marker = {,}}
 }
 
+\RequirePackage{xspace}
+\newcommand*{\Num}{N\textsuperscript{o}\xspace}
+
 % Running header
 \ifjournal
   \RequirePackage{fancyhdr}
@@ -289,7 +300,8 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
   % \fancyhead[R]{\theauthor}
   \fancyfoot{}
   \fancyfoot[LE,RO]{\thepage}
-  \fancyfoot[LO,RE]{\@conf}
+  \fancyfoot[LO,RE]{\emph{\@journal}\ifdefined\@vol, Vol.\ \@vol\fi%
+  \ifdefined\@no, \Num \@no\fi}
   \fancypagestyle{plain}{}
   \fancypagestyle{plain}{
      \fancyhead[R]{\makedoi}
