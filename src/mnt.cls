@@ -104,6 +104,7 @@
   \def\journal#1{\gdef\@journal{#1}}
   \def\Jvolume#1{\gdef\@vol{#1}}
   \def\Jnumber#1{\gdef\@no{#1}}
+  \def\Jyear#1{\gdef\@jyear{#1}}
   \journal{}
 \else
   \def\conference#1{\gdef\@conf{#1}}
@@ -301,7 +302,7 @@ You should not use \verb|\subparagraph| with this class.\vskip0.5cm}
   \fancyfoot{}
   \fancyfoot[LE,RO]{\thepage}
   \fancyfoot[LO,RE]{\emph{\@journal}\ifdefined\@vol, Vol.\ \@vol\fi%
-  \ifdefined\@no, \Num \@no\fi}
+  \ifdefined\@no, \Num \@no\fi\ifdefined\@jyear\xspace (\@jyear)\fi}
   \fancypagestyle{plain}{}
   \fancypagestyle{plain}{
      \fancyhead[R]{\makedoi}
